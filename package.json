@@ -1,0 +1,54 @@
+{
+  "name": "webpack-express",
+  "version": "1.0.0",
+  "description": "A new Webpack boilerplate with hot reloading React components, and error handling on module and component level.",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build": "npm run clean && npm run build:webpack",
+    "start": "node devServer.js",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yangyunxin/webpack-express.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "hot",
+    "reload",
+    "hmr",
+    "live",
+    "edit",
+    "webpack",
+    "babel",
+    "react-transform"
+  ],
+  "author": "yangyunxin",
+  "license": "MIT",
+  "homepage": "https://github.com/yangyunxin/webpack-express",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "cross-env": "^2.0.1",
+    "eslint": "^3.5.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-react": "^6.2.2",
+    "eventsource-polyfill": "^0.9.6",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.7.0",
+    "webpack-hot-middleware": "^2.12.2"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  }
+}
