@@ -16,9 +16,9 @@ module.exports = {
 		vendor: ['react']
 	},
 	output: {
-		path: path.join(__dirname, 'dist'),
+		path: path.join(__dirname, 'build'),
 		filename: '[name].js',
-		publicPath: '/dist/'
+		publicPath: '/'
 	},
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity),

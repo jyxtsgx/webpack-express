@@ -3,15 +3,17 @@ var webpack = require('webpack');
 
 module.exports = {
 	devtool: 'source-map',
-	entry: [
-		'./src/index',
-	],
+	entry: {
+		app: ['./src/index'],
+		vendor: ['react']
+	},
 	output: {
-		path: path.join(__dirname, 'dist'),
-		filename: 'bundle.js',
-		publicPath: '/static/'
+		path: path.join(__dirname, 'dist/js'),
+		filename: '[name].js',
+		publicPath: '/'
 	},
 	plugins: [
+		new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity),
 		new webpack.optimize.OccurrenceOrderPlugin(),
 		//设置为生产环境
 		new webpack.DefinePlugin({
