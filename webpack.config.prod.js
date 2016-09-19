@@ -7,10 +7,15 @@ module.exports = {
 		app: ['./src/index'],
 		vendor: ['react', 'react-router', 'react-dom']
 	},
+	// output: {
+	// 	path: path.join(__dirname, 'dist/js'),
+	// 	filename: '[name].js',
+	// 	chunkFilename: '[id].chunk.js',
+	// 	publicPath: '/dist/'
+	// },
 	output: {
-		path: path.join(__dirname, 'dist/js'),
+		path: path.join(__dirname, 'dist'),
 		filename: '[name].js',
-		chunkFilename: '[name].js',
 		publicPath: '/'
 	},
 	plugins: [
