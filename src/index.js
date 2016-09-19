@@ -1,10 +1,16 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM, { render } from 'react-dom';
-import routes from './router';
 import { Router, Route, hashHistory, browserHistory, IndexRoute } from 'react-router';
+import routes from './router';
+import store from './store/index';
 
 ReactDOM.render(
-	(<Router history={browserHistory} routes={routes} />),
+	(
+		<Provider store={store}>
+			<Router history={browserHistory} routes={routes} />
+		</Provider>
+	),
 	document.getElementById('root')
 );
 
