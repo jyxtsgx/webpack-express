@@ -8,3 +8,14 @@ ReactDOM.render(
 	document.getElementById('root')
 );
 
+// render(
+// 	<Router history={browserHistory}>
+// 		<Route path="/" components={require('./components/App')}>
+// 			<IndexRoute components={require('./components/Main')} />
+// 			<Route path="about" components={require('./components/About')} />
+// 			<Route path="logout" components={require('./components/Logout')} />
+// 		</Route>
+// 		<Route path="/login" components={require('./components/Login')} />
+// 	</Router>,
+// 	document.getElementById('root')
+// )

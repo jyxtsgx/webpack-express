@@ -20,6 +20,9 @@ if (debug) {
 } 
 
 app.use(express.static(path.join(__dirname, viewDir)));
+app.get('*', function (req, res) {
+	res.sendFile(path.join(__dirname, viewDir+'/index.html'))
+})
 app.listen(1000, function (err) {
 	if (err) {
 		console.log(err);

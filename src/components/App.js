@@ -8,14 +8,15 @@ const App = React.createClass({
       <div>
         <ul>
           <li>
-              <Link to="/login">Sign in</Link>
+              <Link to="/login">login</Link>
           </li>
           <li><Link to="/about">About</Link></li>
-          <li><Link to="/">Home</Link> (changes depending on auth status)</li>
-          <li><Link to="/page2">Page Two</Link> (authenticated)</li>
-          <li><Link to="/user/foo">User: Foo</Link> (authenticated)</li>
+          <li><Link to="/">Home</Link> </li>
+          <li><Link to="/logout">logout</Link></li>
         </ul>
-        {this.props.children}
+        <div>
+          {this.props.children}
+        </div>
       </div>
     )
   }

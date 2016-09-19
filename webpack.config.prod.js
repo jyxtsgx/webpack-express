@@ -5,11 +5,12 @@ module.exports = {
 	devtool: 'source-map',
 	entry: {
 		app: ['./src/index'],
-		vendor: ['react']
+		vendor: ['react', 'react-router', 'react-dom']
 	},
 	output: {
 		path: path.join(__dirname, 'dist/js'),
 		filename: '[name].js',
+		chunkFilename: '[name].js',
 		publicPath: '/'
 	},
 	plugins: [
