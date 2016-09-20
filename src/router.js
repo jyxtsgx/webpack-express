@@ -40,6 +40,44 @@ export default [
 							})
 						}
 					},
+					{
+						path: 'user',
+						getComponent: (nextState, cb) => {
+							require.ensure([], (require) => {
+								cb(null, require('./components/User/index'))
+							})
+						},
+						indexRoute: {
+							getComponent: (nextState, cb) => {
+								require.ensure([], (require) => {
+									cb(null, require('./components/User/Main'))
+								})
+							}
+						},
+						getChildRoutes:(nextState, cb) => {
+							require.ensure([], (require) => {
+								cb(null, [
+									{
+										path: 'business',
+										getComponent: (nextState, cb) => {
+											require.ensure([], (require) => {
+												cb(null, require('./components/User/Business'))
+											})
+										}
+									},
+									{
+										path: 'per',
+										getComponent: (nextState, cb) => {
+											require.ensure([], (require) => {
+												cb(null, require('./components/User/Perform'))
+											})
+										}
+									}
+								])
+							})
+						}
+					},
+					
 				])
 			})
 		}

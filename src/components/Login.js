@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import '../style/login.css';
 import store from '../store/index';
 import * as actions from '../actions/login';
-export default class Login extends Component {
+class Login extends Component {
     subHandle(e) {
         e.preventDefault();
         let self = this;
@@ -18,7 +18,8 @@ export default class Login extends Component {
         .then(function () {
             console.log(self.props.state.isLogin)
             if (self.props.state.isLogin) {
-                self.context.router.push('/');
+            	sessionStorage.username = username;
+                self.context.router.push({pathname: '/', state: {username: username}});
             } else {
                 alert('---密码错误---')
             }

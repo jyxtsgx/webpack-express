@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.get('*', function (req, res) {
-	res.sendFile(path.join(__dirname, viewDir+'/index.html'))
+	res.sendFile(path.join(__dirname, viewDir+'/index.html'));
 })
 app.post('/login', function (req, res) {
 	if (req.body.username == "yangyunxin" && req.body.password == "yangyunxin") {
@@ -46,6 +46,9 @@ app.post('/login', function (req, res) {
 	} else {
 		res.send({isLogin: 0})
 	}
+});
+app.post('/about', function (req, res) {
+	console.log('----------------')
 })
 app.listen(1000, function (err) {
 	if (err) {
