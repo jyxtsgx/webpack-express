@@ -1,5 +1,5 @@
 .user_info {padding: 50px;}
 .user_info dl:nth-of-type(1) {border-top: 1px solid #999;}
 dl {border: 1px solid #999;border-top: 0;padding: 10px;}
-dt {width: 50px;float: left;line-height: 20px;}
+dt {width: 80px;float: left;line-height: 20px;}
 dd {float: left;}

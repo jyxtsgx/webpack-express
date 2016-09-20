@@ -1,15 +1,11 @@
-import { LOGIN_DONE, LOGIN_FAIL } from '../actions/login';
-const mockState = { isLogin: 0}
+import { LOGIN_DONE, GET_USER_FAIL } from '../actions/user';
+const mockState = {};
 export default function loginReducer(state=mockState, action) {
 	switch(action.type) {
-		case 'LOGIN_DONE': 
-			return Object.assign({}, state, {
-				isLogin: action.payload
-			})
-		case 'LOGIN_FAIL':
-			return Object.assign({}, state, {
-				error: action.payload
-			})
+		case LOGIN_DONE: 
+			return state
+		case GET_USER_FAIL:
+			return state
 		default:
 			return state;
 	}

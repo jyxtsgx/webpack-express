@@ -49,7 +49,16 @@ app.post('/login', function (req, res) {
 });
 app.post('/about', function (req, res) {
 	console.log('----------------')
-})
+});
+app.post('/userlist', function (req, res) {
+	res.send({
+		username: 'yangyunxin',
+		sexist: '男',
+		age: '23',
+		phone: '18883283605',
+		email: '850801584@qq.com'
+	})
+});
 app.listen(1000, function (err) {
 	if (err) {
 		console.log(err);

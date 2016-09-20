@@ -15,7 +15,9 @@ class App extends Component {
 				<LeftNav />
 				<div className="content">
 					<div className="top_hd"></div>
-					{this.props.children}
+					<div className="con_main">
+						{this.props.children}
+					</div>
 				</div>
 			</div>
 		)
