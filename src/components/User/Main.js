@@ -24,6 +24,7 @@ export default class Main extends Component {
 				<dl key={key} className="clr">
 					<dt>{key}：</dt>
 					<dd>{data[key]}</dd>
+					<span className="delete">delete</span>
 				</dl>
 			)
 		}
