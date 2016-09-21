@@ -8,7 +8,9 @@ export default class Business extends Component {
 	}
 	render() {
 		return (
-			<div>个人业务</div>
+			<div>
+				<h4>个人业务</h4>
+			</div>
 		)
 	}
 }

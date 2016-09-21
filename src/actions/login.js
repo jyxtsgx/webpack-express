@@ -2,14 +2,15 @@ import reqwest from 'reqwest';
 import API from '../API';
 export const LOGIN_DONE = 'LOGIN_DONE';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
-export function login(subreddit) {
+export function login(subredit) {
 	return function (dispatch, getState) {
 		return reqwest({
 			url: API.Login, 
 			method: 'post', 
-			data: subreddit
+			data: subredit
 		})
 		.then(function (resq) {
+			console.log(resq)
 			dispatch(loginDone(resq.isLogin));
 		})
 		.fail(function (error) {

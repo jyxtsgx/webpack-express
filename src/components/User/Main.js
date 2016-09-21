@@ -10,29 +10,53 @@ export default class Main extends Component {
 		this.state = {user: null};
 	}
 	componentDidMount() {
-		var self = this;
+		let self = this;
 		this.props.actions.getUser()
 		.then(function () {
 			self.setState({user: self.props.state.user});
 		})
 	}
+	deleteHandle(key) {
+		let self = this;
+		this.props.actions.deleteUser({key: key})
+		.then(function () {
+			if (self.props.state.isDelete) {
+				alert('删除成功')
+			}
+		})
+	}
+	addHandle() {
+		let property = this.refs.property.value;
+		let value = this.refs.values.value;
+		console.log(property, value);
+		this.props.actions.addUser({property: property, value: value})
+	}
 	render() {
-		let data = this.state.user;
+		let data = this.props.state.user;
 		let dlList = [];
 		for (let key in data) {
-			dlList.push(
-				<dl key={key} className="clr">
-					<dt>{key}：</dt>
-					<dd>{data[key]}</dd>
-					<span className="delete">delete</span>
-				</dl>
-			)
+			if (data[key]) {
+				dlList.push(
+					<dl key={key} className="clr">
+						<dt>{key}：</dt>
+						<dd>{data[key]}</dd>
+						<span className="delete" onClick={this.deleteHandle.bind(this, key)}>delete</span>
+					</dl>
+				)
+			}
 		}
 		return (
 			<div>
 				<h4>个人信息</h4>
 				<div className="user_info">
 					{dlList}
+				</div>
+				<div className="add_user">
+					<div className="add_user_form">
+						<input ref="property" type="text" placeholder="username" />
+						<input ref="values" type="text" placeholder="username" />
+					</div>
+					<button onClick={this.addHandle.bind(this)}>add</button>
 				</div>
 			</div>
 		)

@@ -17,14 +17,7 @@ if (debug) {
 		publicPath: config.output.publicPath,
 		header: { "Access-Control-Allow-Origin": "*" },
         historyApiFallback: true,
-        //反向代理，解决跨域
-        proxy: {
-            '/api/*': {
-                target: 'http://userbase.apiappvv.com',
-                changeOrigin: true,
-                secure: false
-            }
-        }
+
 	}));
 	//热加载模块
 	app.use(require('webpack-hot-middleware')(compiler));
@@ -50,15 +43,25 @@ app.post('/login', function (req, res) {
 app.post('/about', function (req, res) {
 	console.log('----------------')
 });
-app.post('/userlist', function (req, res) {
-	res.send({
+var userData = {
 		username: 'yangyunxin',
 		sexist: '男',
 		age: '23',
 		phone: '18883283605',
 		email: '850801584@qq.com'
-	})
+	}
+app.post('/userlist', function (req, res) {
+	res.send(userData)
 });
+app.post('/deleteUser', function (req, res) {
+	userData[req.body.key] = null;
+	res.send({isDelete: 1})
+});
+app.post('/addUser', function (req, res) {
+	console.log(req.body);
+	userData[req.body.property] = req.body.value;
+	res.send({isAdd: 1});
+})
 app.listen(1000, function (err) {
 	if (err) {
 		console.log(err);
