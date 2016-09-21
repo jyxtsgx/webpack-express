@@ -26,10 +26,16 @@ export default class Main extends Component {
 		})
 	}
 	addHandle() {
+		let self = this;
 		let property = this.refs.property.value;
 		let value = this.refs.values.value;
 		console.log(property, value);
 		this.props.actions.addUser({property: property, value: value})
+		.then(function () {
+			if (self.props.state.isAdd) {
+				alert('新增成功')
+			}
+		})
 	}
 	render() {
 		let data = this.props.state.user;

@@ -1,3 +1,13 @@
+function rediretToLogin(nextState, replace, callback) {
+	if (!sessionStorage.username) {
+		console.log(nextState)
+		replace({
+			pathname: '/login',
+			state: {nextPathname: nextState.location.pathname}
+		})
+	}
+	callback();
+}
 export default [
 	{
 		path: '/login',
@@ -8,6 +18,7 @@ export default [
 		}
 	},
 	{
+		onEnter: rediretToLogin,
 		path: '/',
 		getComponent: (nextState, cb) => {
 			require.ensure([], (require) => {
