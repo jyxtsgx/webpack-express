@@ -72,10 +72,10 @@ export function addUser(subredit) {
 			data: subredit
 		})
 		.then(function (res) {
-			console.log(res);
+			dispatch(addUserDone(res.isAdd, subredit))
 		})
 		.fail(function (error) {
-			console.log(error)
+			dispatch(addUserFail('网络错误'))
 		})
 	}
 }

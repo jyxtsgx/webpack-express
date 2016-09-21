@@ -20,9 +20,15 @@ export default function loginReducer(state=mockState, action) {
 				error: action.payload
 			})
 		case 'ADD_USER_DONE':
-			return state
+			state.user[action.data.property] = action.data.value;
+			console.log(action.data);
+			return Object.assign({},state, {
+				isAdd: action.payload
+			})
 		case 'ADD_USER_FAIL': 
-			return state
+			return Object.assign({}, state, {
+				error: action.payload
+			})
 		default:
 			return state;
 	}
