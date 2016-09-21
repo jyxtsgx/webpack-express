@@ -13,7 +13,7 @@ export default class Main extends Component {
 		let self = this;
 		this.props.actions.getUser()
 		.then(function () {
-			self.setState({user: self.props.state.user});
+			// self.setState({user: self.props.state.user});
 		})
 	}
 	deleteHandle(key) {

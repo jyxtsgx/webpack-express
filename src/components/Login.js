@@ -19,7 +19,6 @@ class Login extends Component {
             console.log(self.props.state.isLogin)
             if (self.props.state.isLogin) {
             	sessionStorage.username = username;
-                console.log
                 let pathname = self.props.location.state.nextPathname || '/';
                 self.context.router.push({pathname: pathname, state: {username: username}});
             } else {

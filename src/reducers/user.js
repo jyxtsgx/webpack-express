@@ -21,7 +21,6 @@ export default function loginReducer(state=mockState, action) {
 			})
 		case 'ADD_USER_DONE':
 			state.user[action.data.property] = action.data.value;
-			console.log(action.data);
 			return Object.assign({},state, {
 				isAdd: action.payload
 			})
