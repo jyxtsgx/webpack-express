@@ -1,0 +1,8 @@
+.user_info {padding: 50px;}
+.user_info dl:nth-of-type(1) {border-top: 1px solid #999;}
+dl {border: 1px solid #999;border-top: 0;padding: 10px;position: relative;}
+dt {width: 80px;float: left;line-height: 20px;}
+dd {float: left;}
+.delete {position: absolute;top: 0;right: 20px;line-height: 20px;padding: 10px 0;cursor: pointer;}
+.add_user {margin-top: 50px;padding-left: 50px;}
+.add_user_form input {width: 50%;border: 1px solid #8e8e8e;padding: 10px;line-height: 20px;margin-bottom: 10px;}

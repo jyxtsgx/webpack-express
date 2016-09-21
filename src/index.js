@@ -4,7 +4,7 @@ import ReactDOM, { render } from 'react-dom';
 import { Router, Route, hashHistory, browserHistory, IndexRoute } from 'react-router';
 import routes from './router';
 import store from './store/index';
-
+import './style/reset.css';
 ReactDOM.render(
 	(
 		<Provider store={store}>

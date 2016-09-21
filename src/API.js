@@ -4,4 +4,7 @@
 module.exports = {
 	Token: '/token',
 	Login: '/login',
+	getUser: '/userlist',
+	deleteUser: '/deleteUser',
+	addUser: '/addUser'
 }
