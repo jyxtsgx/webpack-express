@@ -5,4 +5,4 @@ npm run prod 生产环境
 对于前端请求是用express响应的，目前还没做到自动刷新
 
 用户名 yangyunxin
-密码   杨运鑫
+密码   yangyunxin
