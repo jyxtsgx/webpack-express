@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import '../../style/user.css';
 import * as actions from '../../actions/user';
 
 export default class Main extends Component {

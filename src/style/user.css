@@ -6,3 +6,7 @@ dd {float: left;}
 .delete {position: absolute;top: 0;right: 20px;line-height: 20px;padding: 10px 0;cursor: pointer;}
 .add_user {margin-top: 50px;padding-left: 50px;}
 .add_user_form input {width: 50%;border: 1px solid #8e8e8e;padding: 10px;line-height: 20px;margin-bottom: 10px;}
+.business {}
+.search_wrap {width: 300px;border: 1px solid #8e8e8e;padding: 30px;margin-top: 100px;margin-left: 100px;}
+.search_wrap form {margin-bottom: 10px;}
+.search_wrap form input[type="text"] {margin-bottom: 8px;}

@@ -68,7 +68,7 @@ export function addUser(subredit) {
 	return function (dispatch, getState) {
 		return reqwest({
 			url: API.addUser,
-			method: 'POST',
+			method: 'GET',
 			data: subredit
 		})
 		.then(function (res) {

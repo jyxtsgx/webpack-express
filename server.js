@@ -69,6 +69,10 @@ app.post('/addUser', function (req, res) {
 	console.log(req.body);
 	userData[req.body.property] = req.body.value;
 	res.send({isAdd: 1});
+});
+
+app.post('/getGoods', function (req, res) {
+	res.send(goods);
 })
 app.listen(1000, function (err) {
 	if (err) {

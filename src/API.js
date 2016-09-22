@@ -6,5 +6,6 @@ module.exports = {
 	Login: '/login',
 	getUser: '/userlist',
 	deleteUser: '/deleteUser',
-	addUser: '/addUser'
+	addUser: '/addUser',
+	getGoods: '/getGoods'
 }
