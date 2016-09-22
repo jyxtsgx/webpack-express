@@ -5,13 +5,13 @@ import * as actions from '../../actions/goods';
 class List extends Component {
 	render() {
 		console.log(this.props.data);
-		let liList = this.props.data.map(function (data, key) {
-			return <li key={key}>{data.name}</li>
-			console.log(data)
-		})
+		// let liList = this.props.data.map(function (data, key) {
+		// 	return <li key={key}>{data.name}</li>
+		// 	console.log(data)
+		// })
 		return (
 			<ul>
-				{liList}
+				<li>test</li>
 			</ul>
 		)
 	}
@@ -35,6 +35,9 @@ export default class Perform extends Component {
 		.then(function () {
 		})
 	}
+	componentDidMount() {
+		console.log('-----will mount-------')
+	}
 	render() {
 		console.log('---------render --------')
 		console.log(this.props.state)
@@ -47,5 +50,34 @@ export default class Perform extends Component {
 		)
 	}
 }
+let arr = [1,2,3,4];
+function connectPromise({promiseLoader, mapResultTops}) {
+	return function (Comp) {
+		return class AsyncComponent extends Component {
+			constructor(props) {
+				super(props);
+			}
+			componentWillMount() {
+				console.log('-----will mount-------');
+				console.log(mapResultTops(arr))
+				// this.props.actions.getGoods()
+				// .then(function () {
+				// })
+			}
+			render() {
+				return (
+					<Comp {...this.props} />
+				)
+			}
+		}
+	}
+}
+var test = test;
+const GoodsList = connectPromise({
+	test,
+	mapResultTops: function (arr) { return arr}
+})(List)
+// connect((state) => ({state: state.Goods}), (dispatch) => ({actions: bindActionCreators(actions, dispatch)}))(connectPromise);
 
-module.exports = connect((state) => ({state: state.Goods}), (dispatch) => ({actions: bindActionCreators(actions, dispatch)}))(Perform);
+// module.exports = GoodsList;
+module.exports = GoodsList;

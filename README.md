@@ -6,3 +6,6 @@ npm run prod 生产环境
 
 用户名 yangyunxin
 密码   yangyunxin
+
+高阶组件
+http://gold.xitu.io/entry/57ce5f9bc4c9710054ac206e
