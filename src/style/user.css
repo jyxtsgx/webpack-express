@@ -13,3 +13,4 @@ dd {float: left;}
 .goods_delete {margin-left: 20px;cursor: pointer;}
 .goods_list {padding: 50px;}
 .goods_list li {line-height: 20px;}
+table th,table td {width: 100px;text-align: left;}

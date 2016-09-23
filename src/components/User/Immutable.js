@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-class Immutable extends Component {
+import Immutable from 'immutable';
+class Immutables extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -8,14 +9,21 @@ class Immutable extends Component {
 			}
 		}
 	}
+	componentDidMount() {
+		Immutable.fromJS({a: {b: [10, 20, 30]}, c: 40}, function (key, value) {
+			// var isIndexed = Immutable.Iterable.isIndexed(value);
+			// return isIndexed ? value.toList() : value.toOrderedMap();
+			console.log(value.get('a'))
+		});
+	}
 	addHandle() {
 		//data和this.state.data是同一个内存地址
 		var data = this.state.data;
 		data.times++;
-		console.log(this.state.data);
 		this.setState({data: data})
 	}
 	render() {
+		console.log('---render-----')
 		return (
 			<div>
 				<h4>Immutable用法</h4>
@@ -28,4 +36,4 @@ class Immutable extends Component {
 	}
 }
 
-module.exports = Immutable;
+module.exports = Immutables;

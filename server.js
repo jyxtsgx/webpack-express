@@ -79,6 +79,16 @@ app.post('/deleteGoods', function (req, res) {
 	goods.splice(req.body['key'], 1)
 	res.send({isDelete: 1});
 })
+app.post('/filterGoods', function (req, res) {
+	console.log(req.body.filterText)
+	goods.filter(function (value) {
+		console.log(value.name)
+		return value.name.indexOf(req.body.filterText) > 0
+	})
+	res.send(goods.filter(function (value) {
+		return value.name.indexOf(req.body.filterText) > 0
+	}));
+})
 app.listen(1000, function (err) {
 	if (err) {
 		console.log(err);

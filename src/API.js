@@ -8,5 +8,6 @@ module.exports = {
 	deleteUser: '/deleteUser',
 	addUser: '/addUser',
 	getGoods: '/getGoods',
-	deleteGoods: '/deleteGoods'
+	deleteGoods: '/deleteGoods',
+	filterGoods: '/filterGoods'
 }

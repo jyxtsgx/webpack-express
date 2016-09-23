@@ -1,4 +1,19 @@
 import React, { Component } from 'react';
+class Ul extends Component {
+	handleKeyDown(e) {
+		if (e.keyCode === 13) {
+			console.log(e.target.value);
+		}
+	}
+	render() {
+		console.log('------子组件-----');
+		return (
+			<div>
+				<input onKeyDown={this.handleKeyDown.bind(this)} type="text" />
+			</div>
+		)
+	}
+}
 class Status extends Component {
 	constructor(props) {
 		super(props);
@@ -19,7 +34,7 @@ class Status extends Component {
 		// })
 	}
 	componentDidMount() {
-		console.log('-----will mount-------')
+		console.log('-----did mount-------')
 	}
 	render() {
 		console.log('---------render --------')
@@ -27,6 +42,7 @@ class Status extends Component {
 		return (
 			<div>
 				<h4>生命周期</h4>
+				<Ul></Ul>
 			</div>
 		)
 	}
