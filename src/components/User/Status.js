@@ -7,7 +7,7 @@ class Status extends Component {
 		console.log('-----WillReceive-------')
 		console.log(nextProps.state)
 	}
-	shouldComponent(nextProps) {
+	shouldComponent(nextProps, nextState) {
 		console.log('-----shouldComponent-------')
 		console.log(nextProps.state)
 		return true;

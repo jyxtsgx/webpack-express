@@ -40,6 +40,15 @@ function connectPromise() {
 				.then(function () {
 				})
 			}
+			shouldComponentUpdate(nextProps, nextState) {
+				console.log(this.props.state);
+				console.log(nextProps.state);
+				console.log(this.props.state == nextProps.state);
+				if (this.props.state !== nextProps.state) {
+					return true;
+				}
+				return false;
+			}
 			deleteHandle(key) {
 				this.props.actions.deleteGoods(key);
 			}
