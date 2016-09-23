@@ -10,3 +10,4 @@ dd {float: left;}
 .search_wrap {width: 300px;border: 1px solid #8e8e8e;padding: 30px;margin-top: 100px;margin-left: 100px;}
 .search_wrap form {margin-bottom: 10px;}
 .search_wrap form input[type="text"] {margin-bottom: 8px;}
+.goods_delete {margin-left: 20px;cursor: pointer;}

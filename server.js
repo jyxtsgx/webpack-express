@@ -74,6 +74,11 @@ app.post('/addUser', function (req, res) {
 app.post('/getGoods', function (req, res) {
 	res.send(goods);
 })
+app.post('/deleteGoods', function (req, res) {
+	console.log(req.body)
+	goods.splice(req.body['key'], 1)
+	res.send({isDelete: 1});
+})
 app.listen(1000, function (err) {
 	if (err) {
 		console.log(err);

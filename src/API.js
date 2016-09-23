@@ -7,5 +7,6 @@ module.exports = {
 	getUser: '/userlist',
 	deleteUser: '/deleteUser',
 	addUser: '/addUser',
-	getGoods: '/getGoods'
+	getGoods: '/getGoods',
+	deleteGoods: '/deleteGoods'
 }

@@ -8,9 +8,9 @@ import * as actions from '../../actions/goods';
  */
 class List extends Component {
 	render() {
+		let self = this;
 		let liList = this.props.state.goods.map(function (data, key) {
-			return <li key={key}>{data.name}</li>
-			console.log(data)
+			return <li key={key}>{data.name}<span className="goods_delete" onClick={self.props.deleteHandle.bind(self, key)}>delete</span></li>
 		})
 		return (
 			<div>
@@ -36,19 +36,20 @@ function connectPromise() {
 				super(props);
 			}
 			componentWillMount() {
-				console.log('-----will mount-------');
 				this.props.actions.getGoods()
 				.then(function () {
 				})
 			}
+			deleteHandle(key) {
+				this.props.actions.deleteGoods(key);
+			}
 			render() {
 				return (
-					<Comp {...this.props} />
+					<Comp {...this.props} deleteHandle={this.deleteHandle} />
 				)
 			}
 		}
 		return connect((state) => ({state: state.Goods}), (dispatch) => ({actions: bindActionCreators(actions, dispatch)}))(AsyncComponent);
 	}
 }
-const GoodsList = connectPromise()(List)
-module.exports = GoodsList;
+module.exports = connectPromise()(List);
