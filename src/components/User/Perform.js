@@ -2,67 +2,44 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/goods';
+/**
+ * 结构组件，只展示内容数据，不做逻辑处理
+ * state有props从父级接受
+ */
 class List extends Component {
 	render() {
-		console.log(this.props.data);
-		// let liList = this.props.data.map(function (data, key) {
-		// 	return <li key={key}>{data.name}</li>
-		// 	console.log(data)
-		// })
-		return (
-			<ul>
-				<li>test</li>
-			</ul>
-		)
-	}
-}
-export default class Perform extends Component {
-	constructor(props) {
-		super(props);
-	}
-	componentWillReceiveProps(nextProps) {
-		console.log('-----WillReceive-------')
-		console.log(nextProps.state)
-	}
-	shouldComponent(nextProps) {
-		console.log('-----shouldComponent-------')
-		console.log(nextProps.state)
-		return true;
-	}
-	componentWillMount() {
-		console.log('-----will mount-------')
-		this.props.actions.getGoods()
-		.then(function () {
+		let liList = this.props.state.goods.map(function (data, key) {
+			return <li key={key}>{data.name}</li>
+			console.log(data)
 		})
-	}
-	componentDidMount() {
-		console.log('-----will mount-------')
-	}
-	render() {
-		console.log('---------render --------')
-		console.log(this.props.state)
-		this.props.state.goods.map(function () {})
 		return (
 			<div>
 				<h4>高阶组件</h4>
-				<List data={this.props.state.goods} />
+				<ul>
+					{liList}
+				</ul>
 			</div>
 		)
 	}
 }
-let arr = [1,2,3,4];
-function connectPromise({promiseLoader, mapResultTops}) {
+/**
+ * 高阶组件容器函数
+ * @return a component
+ * 返回值是父组件，用connect绑定state和actions
+ * {...this.props}是es6写法，把props全部作为子组件的属性
+ * connect react-redux的函数，绑定action和state
+ */
+function connectPromise() {
 	return function (Comp) {
-		return class AsyncComponent extends Component {
+		class AsyncComponent extends Component {
 			constructor(props) {
 				super(props);
 			}
 			componentWillMount() {
 				console.log('-----will mount-------');
-				console.log(mapResultTops(arr))
-				// this.props.actions.getGoods()
-				// .then(function () {
-				// })
+				this.props.actions.getGoods()
+				.then(function () {
+				})
 			}
 			render() {
 				return (
@@ -70,14 +47,8 @@ function connectPromise({promiseLoader, mapResultTops}) {
 				)
 			}
 		}
+		return connect((state) => ({state: state.Goods}), (dispatch) => ({actions: bindActionCreators(actions, dispatch)}))(AsyncComponent);
 	}
 }
-var test = test;
-const GoodsList = connectPromise({
-	test,
-	mapResultTops: function (arr) { return arr}
-})(List)
-// connect((state) => ({state: state.Goods}), (dispatch) => ({actions: bindActionCreators(actions, dispatch)}))(connectPromise);
-
-// module.exports = GoodsList;
+const GoodsList = connectPromise()(List)
 module.exports = GoodsList;
