@@ -15,7 +15,7 @@ class List extends Component {
 		return (
 			<div>
 				<h4>高阶组件</h4>
-				<ul>
+				<ul className="goods_list">
 					{liList}
 				</ul>
 			</div>

@@ -11,3 +11,5 @@ dd {float: left;}
 .search_wrap form {margin-bottom: 10px;}
 .search_wrap form input[type="text"] {margin-bottom: 8px;}
 .goods_delete {margin-left: 20px;cursor: pointer;}
+.goods_list {padding: 50px;}
+.goods_list li {line-height: 20px;}

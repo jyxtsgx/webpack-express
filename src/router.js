@@ -83,6 +83,22 @@ export default [
 												cb(null, require('./components/User/Perform'))
 											})
 										}
+									},
+									{
+										path: 'immutable',
+										getComponent: (nextState, cb) => {
+											require.ensure([], (require) => {
+												cb(null, require('./components/User/Immutable'))
+											})
+										}
+									},
+									{
+										path: 'status',
+										getComponent: (nextState, cb) => {
+											require.ensure([], (require) => {
+												cb(null, require('./components/User/Status'))
+											})
+										}
 									}
 								])
 							})

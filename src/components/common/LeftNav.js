@@ -11,6 +11,8 @@ export default class LeftNav extends Component {
 							<li><Link to="/user">增删改查</Link></li>
 							<li><Link to="/user/business">筛选数据</Link></li>
 							<li><Link to="/user/per">高阶组件</Link></li>
+							<li><Link to="/user/immutable">Immutable</Link></li>
+							<li><Link to="/user/status">生命周期</Link></li>
 						</ul>
 					</div>
 					<div className="left_item">

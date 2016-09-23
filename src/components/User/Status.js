@@ -1,4 +1,5 @@
-export default class Perform extends Component {
+import React, { Component } from 'react';
+class Status extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -30,3 +31,4 @@ export default class Perform extends Component {
 		)
 	}
 }
+module.exports = Status;
